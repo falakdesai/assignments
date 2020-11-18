@@ -35,5 +35,4 @@ public class MainActivity extends AppCompatActivity {
         movies.add(new Movie("Sanju","498 Ratings","This movie is based on friendship and the biography of Mr. Sanjay Dutt, an Indian movie actor",R.drawable.sanju));
         return movies;
     }
-
 }
