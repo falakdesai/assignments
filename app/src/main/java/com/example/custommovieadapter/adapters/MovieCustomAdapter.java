@@ -1,5 +1,6 @@
 package com.example.custommovieadapter.adapters;
 
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -35,8 +36,24 @@ public class MovieCustomAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View view, ViewGroup viewGroup) {
-        return null;
+    public View getView(int position, View convertView, ViewGroup parent) {
+        MovieViewHolder movieViewHolder;
+
+        if (convertView == null){
+            convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.movie_row_layout, null);
+            movieViewHolder = new MovieViewHolder(convertView);
+            convertView.setTag(movieViewHolder);
+        } else {
+            movieViewHolder = (MovieViewHolder) convertView.getTag();
+        }
+
+        Movie movie = getItem(position);
+        movieViewHolder.tvMovieTitle.setText(movie.getMovieTitle());
+        movieViewHolder.tvMovieRating.setText(movie.getMovieRating());
+        movieViewHolder.tvMovieDescription.setText(movie.getMovieDescription());
+        movieViewHolder.ivMovieImage.setImageResource(movie.getMovieImage());
+
+        return convertView;
     }
 
 
