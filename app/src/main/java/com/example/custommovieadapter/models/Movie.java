@@ -7,4 +7,11 @@ public class Movie {
     private String movieDescription;
     private int movieImage;
 
+    public Movie(String movieTitle, String movieRating, String movieDescription, int movieImage) {
+        this.movieTitle = movieTitle;
+        this.movieRating = movieRating;
+        this.movieDescription = movieDescription;
+        this.movieImage = movieImage;
+    }
+
 }
